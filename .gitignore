@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Local data (user accounts and uploaded files)
+backend/*.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Node
+node_modules/
+.next/
+
+# OS
+.DS_Store

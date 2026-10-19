@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0b0b0c;
+  --color-surface: #17171a;
+  --color-border: #2a2a2e;
+  --color-ink: #f5f3ef;
+  --color-muted: #9a958c;
+  --color-gold: #c9a961;
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Interactive hover effects */
+.btn-primary {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px -6px rgba(201, 169, 97, 0.4);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-outline {
+  transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn-outline:hover {
+  transform: translateY(-1px);
+}
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+.card-hover {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* Page enter animation */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.35s ease-out;
+}
+
+/* Modal enter animation */
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-enter {
+  animation: modalEnter 0.2s ease-out;
+}
+
+@keyframes overlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay-fade {
+  animation: overlayFade 0.15s ease-out;
+}
